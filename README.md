@@ -47,3 +47,23 @@ deno task cli --test --year 2020 --day 1
 # or
 deno task cli --t --y 2020 --d 1
 ```
+
+To benchmark a solution:
+```shell
+# run
+deno task cli --bench --year 2024 --day 1
+
+# Output:
+deno task cli --bench --year 2024 --day 1
+Task cli deno run --allow-read --allow-write --allow-run ./cli.ts "--bench" "--year" "2024" "--day" "1"
+Check ~/aoc/src/2024/day01/solution_bench.ts
+    CPU | Apple M1
+Runtime | Deno 2.1.1 (aarch64-apple-darwin)
+
+~/aoc/src/2024/day01/solution_bench.ts
+
+benchmark   time/iter (avg)        iter/s      (min … max)           p75      p99     p995
+----------- ----------------------------- --------------------- --------------------------
+partOne              4.4 ns   229,300,000 (  4.0 ns … 295.9 ns)   4.1 ns  12.4 ns  17.2 ns
+
+```

@@ -7,6 +7,7 @@ const TEMPLATE_FILES = [
 	"input_sample.txt",
 	"solution.ts",
 	"solution_test.ts",
+	"solution_bench.ts",
 	"solution_refactored.ts",
 ];
 
@@ -19,10 +20,11 @@ const args = parseArgs(Deno.args, {
 		run: "r",
 		help: "h",
 		template: "tmpl",
-		test: "t"
+		test: "t",
+		bench: "-b",
 	},
 	string: ["year", "day", "part", "input"],
-	boolean: ["run", "help", "template", "test"],
+	boolean: ["run", "help", "template", "test", "bench"],
 	default: {
 		year: DATE_YEAR.toString(),
 		input: DEFAULT_INPUT_FILE,
@@ -43,7 +45,8 @@ Options:
   -i, --input   	<filename>   Specify the input file to use (default: input.txt)
   -r, --run                      Execute the solution
   -h, --help                     Show this help message
-  --test, --tst                  Run tests for the specified day
+  -t, --test                     Run tests for the specified day
+  -b, --bench                     Run benchmarks for the specified day
 
 Examples:
 	Found in the README.md
@@ -126,9 +129,31 @@ async function runTests(year: string, day: string) {
 	}
 }
 
+/**
+ * Runs the benchmarks for a specific day.
+ */
+async function runBenchmarks(year: string, day: string) {
+	try {
+		const dayStr = day.padStart(2, "0");
+		const benchPath = `./src/${year}/day${dayStr}/solution_bench.ts`;
+
+		const command = new Deno.Command("deno", {
+			args: ["bench", benchPath],
+			stdout: "inherit",
+			stderr: "inherit",
+		});
+
+		const {code} = await command.output();
+		Deno.exit(code);
+	} catch (e) {
+		console.error(`Error running tests: ${e}`);
+		Deno.exit(1);
+	}
+}
+
 // Main CLI Logic
 (async function () {
-	const { year, day, part, input, run, template, test } = args;
+	const { year, day, part, input, run, template, test, bench } = args;
 
 	switch (true) {
 		case template:
@@ -161,6 +186,22 @@ async function runTests(year: string, day: string) {
 			}
 
 			await runTests(year, day);
+			break;
+
+		case bench:
+			if (!day || isNaN(Number(day)) || Number(day) < 1 || Number(day) > 25) {
+				console.error("Error: Please provide a valid day (1-25) using the -d or --day flag.");
+				console.log("ex: `deno task cli --bench --year 2020 --day 1\ndeno task cli -b -y 2020 -d 1`")
+				Deno.exit(1);
+			}
+
+			if (!year || isNaN(Number(year))) {
+				console.error("Error: Please provide a valid year using the -y or --year flag.");
+				console.log("ex: `deno task cli --bench --year 2020 --day 1\ndeno task cli -b -y 2020 -d 1`")
+				Deno.exit(1);
+			}
+
+			await runBenchmarks(year, day);
 			break;
 
 		case run:

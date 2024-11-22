@@ -1,0 +1,8 @@
+# dirs
+.idea
+.fleet
+.vscode
+bin
+
+# files
+.env

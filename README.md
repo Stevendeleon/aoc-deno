@@ -24,8 +24,8 @@ deno task cli -h
 
 To scaffold and stub out your solutions for a given year:
 ```shell
-# template challenges for given year
-deno task cli --template --year <target-year> 
+# generate
+deno task cli --generate --year <target-year> 
 ```
 
 To run a solution for a given challenge:
@@ -34,9 +34,11 @@ To run a solution for a given challenge:
 ```shell
 # run
 deno task cli --run --year 2020 --day 1 --part 1 --input input.txt
+deno task cli --run --year 2020 --day 1 --part 1 # will target input.txt
 
 # or
-deno task cli -r -y 2020 -d 1 -p 1
+deno task cli -r -y 2020 -d 1 -p 1 -i input_sample.txt
+deno task cli -r -y 2020 -d 1 -p 1  # will target input.txt
 ```
 
 To test as solution:

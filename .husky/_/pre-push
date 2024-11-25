@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname "$0")/h"
 
-deno task test:coverage
+deno task test
 TEST_RESULT=$?
 
 if [ $TEST_RESULT -ne 0 ]; then

@@ -51,5 +51,10 @@
 	"lint": {
 		"include": ["src/**/*.ts"],
 		"exclude": ["_templates/*", "cov", "bin", ".husky", ".env"]
+	},
+	"husky": {
+		"hooks": {
+			"pre-push": ".husky/pre-push"
+		}
 	}
 }

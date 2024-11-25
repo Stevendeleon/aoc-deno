@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/h"
+
+deno task test:coverage
+TEST_RESULT=$?
+
+if [ $TEST_RESULT -ne 0 ]; then
+  echo "Tests failed. Aborting push."
+  exit 1
+fi

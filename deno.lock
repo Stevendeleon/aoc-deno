@@ -4,7 +4,9 @@
     "jsr:@std/assert@^1.0.8": "1.0.8",
     "jsr:@std/cli@^1.0.6": "1.0.6",
     "jsr:@std/dotenv@~0.225.2": "0.225.2",
-    "jsr:@std/internal@^1.0.5": "1.0.5"
+    "jsr:@std/internal@^1.0.5": "1.0.5",
+    "npm:husky@*": "9.1.7",
+    "npm:husky@^9.1.7": "9.1.7"
   },
   "jsr": {
     "@std/assert@1.0.8": {
@@ -21,6 +23,11 @@
     },
     "@std/internal@1.0.5": {
       "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    }
+  },
+  "npm": {
+    "husky@9.1.7": {
+      "integrity": "sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA=="
     }
   },
   "redirects": {
@@ -66,7 +73,8 @@
     "dependencies": [
       "jsr:@std/assert@^1.0.8",
       "jsr:@std/cli@^1.0.6",
-      "jsr:@std/dotenv@~0.225.2"
+      "jsr:@std/dotenv@~0.225.2",
+      "npm:husky@^9.1.7"
     ]
   }
 }

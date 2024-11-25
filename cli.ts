@@ -85,10 +85,6 @@ async function createDirectories(year: string) {
 		const dayStr = day.toString().padStart(2, '0');
 		const dirPath = `src/${year}/day${dayStr}`;
 
-		if (await Deno.stat(dirPath).catch(() => null)) {
-			continue;
-		}
-
 		await Deno.mkdir(dirPath, { recursive: true });
 
 		for (const fileName of TEMPLATE_FILES) {
@@ -108,13 +104,14 @@ async function copyTemplateFile(fileName: string, destDir: string) {
 	const templateContent = await Deno.readTextFile(`_templates/${fileName}`);
 	const destPath = `${destDir}/${fileName}`;
 
+	// Check if the file already exists
 	if (await Deno.stat(destPath).catch(() => null)) {
-		await Deno.writeTextFile(destPath, templateContent);
-		return;
+		console.error(`Error: ${destPath} already exists.`);
+		Deno.exit(1);
 	}
 
-	console.error(`Error: ${destPath} already exists.`);
-	Deno.exit(1);
+	// Otherwise, write the template content to the destination path
+	await Deno.writeTextFile(destPath, templateContent);
 }
 
 /**

@@ -1,13 +1,28 @@
 import { assertEquals } from '@std/assert';
 
 import { partOne, partTwo } from './solution.ts';
+import { partOneRefactored, partTwoRefactored } from './solution_refactored.ts';
 
-const mockData = ``;
+const sampleInputData = await Deno.readTextFile(
+	new URL('./input.txt', import.meta.url),
+);
 
-Deno.test('partOne should return true', () => {
-	assertEquals(partOne(mockData), 1);
+const inputData = await Deno.readTextFile(
+	new URL('./input.txt', import.meta.url),
+);
+
+Deno.test('partOne should return 0', () => {
+	assertEquals(partOne(sampleInputData), 0);
 });
 
-Deno.test('partTwo should return true', () => {
-	assertEquals(partTwo(mockData), 2);
+Deno.test('partTwo should return 0', () => {
+	assertEquals(partTwo(sampleInputData), 0);
+});
+
+Deno.test('partOne refactored should return 0', () => {
+	assertEquals(partOneRefactored(inputData), 0);
+});
+
+Deno.test('partTwo refactored should return 0', () => {
+	assertEquals(partTwoRefactored(inputData), 0);
 });

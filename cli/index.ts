@@ -1,7 +1,4 @@
 import { parseArgs } from '@std/cli';
-
-import { CURRENT_YEAR, DEFAULT_INPUT_FILE } from '@cli/constants.ts';
-
 import {
 	createDirectories,
 	fetchData,
@@ -12,6 +9,7 @@ import {
 	runTests,
 } from '@cli/functions.ts';
 import { FetchDataParams } from '@cli/types.ts';
+import { CURRENT_YEAR, DEFAULT_INPUT_FILE } from '@cli/constants.ts';
 
 const args = parseArgs(Deno.args, {
 	alias: {

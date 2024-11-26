@@ -1,6 +1,5 @@
-import { DOMParser } from 'jsr:@b-fuze/deno-dom';
 import '@std/dotenv/load';
-
+import { DOMParser } from 'jsr:@b-fuze/deno-dom';
 import { CHALLENGE_DIR, TEMPLATE_DIR, TEMPLATE_FILES } from '@cli/constants.ts';
 import { FetchDataParams } from '@cli/types.ts';
 

@@ -1,3 +1,41 @@
+# Day 1
+
+## Tests
+```shell
+~/Desktop/Code/aoc git:[2024]
+deno task cli -t -y 2024 -d 1
+Task cli deno run --allow-read --allow-write --allow-run --allow-env --allow-net ./cli/index.ts "-t" "-y" "2024" "-d" "1"
+Check file:///Users/steven/Desktop/Code/aoc/src/challenges/2024/day01/solution_test.ts
+running 4 tests from ./src/challenges/2024/day01/solution_test.ts
+partOne should return 11 ... ok (0ms)
+partTwo should return 31 ... ok (0ms)
+partOne refactored should return 11 ... ok (0ms)
+partTwo refactored should return 31 ... ok (0ms)
+
+ok | 4 passed | 0 failed (4ms)
+```
+
+## Bench
+```shell
+~/Desktop/Code/aoc git:[2024]
+deno task cli -b -y 2024 -d 1
+Task cli deno run --allow-read --allow-write --allow-run --allow-env --allow-net ./cli/index.ts "-b" "-y" "2024" "-d" "1"
+Check file:///Users/steven/Desktop/Code/aoc/src/challenges/2024/day01/solution_bench.ts
+    CPU | Apple M1
+Runtime | Deno 2.1.1 (aarch64-apple-darwin)
+
+file:///Users/steven/Desktop/Code/aoc/src/challenges/2024/day01/solution_bench.ts
+
+benchmark              time/iter (avg)        iter/s      (min … max)           p75      p99     p995
+---------------------- ----------------------------- --------------------- --------------------------
+partOne                       664.7 µs         1,504 (571.4 µs …   1.2 ms) 680.5 µs 938.4 µs   1.0 ms
+partTwo                         1.1 ms         871.9 (  1.0 ms …   3.1 ms)   1.2 ms   1.4 ms   3.0 ms
+partOne - Refactored          586.8 µs         1,704 (499.8 µs …   1.2 ms) 599.5 µs 858.7 µs 908.9 µs
+partTwo - Refactored          312.0 µs         3,205 (253.7 µs …   1.2 ms) 317.6 µs 560.8 µs 606.7 µs
+
+```
+
+## Question
 <article class="day-desc"><h2>--- Day 1: Historian Hysteria ---</h2><p>The <em>Chief Historian</em> is always present for the big Christmas sleigh launch, but nobody has seen him in months! Last anyone heard, he was visiting locations that are historically significant to the North Pole; a group of Senior Historians has asked you to accompany them as they check the places they think he was most likely to visit.</p>
 <p>As each location is checked, they will mark it on their list with a <em class="star">star</em>. They figure the Chief Historian <em>must</em> be in one of the first fifty places they'll look, so in order to save Christmas, you need to help them get <em class="star">fifty stars</em> on their list before Santa takes off on December 25th.</p>
 <p>Collect stars by solving puzzles.  Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first.  Each puzzle grants <em class="star">one star</em>. Good luck!</p>

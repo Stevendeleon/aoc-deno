@@ -11,12 +11,12 @@ const inputData = await Deno.readTextFile(
 	new URL('./input.txt', import.meta.url),
 );
 
-Deno.test('partOne should return 0', () => {
-	assertEquals(partOne(sampleInputData), 0);
+Deno.test('partOne should return 11', () => {
+	assertEquals(partOne(sampleInputData), 11);
 });
 
-Deno.test('partTwo should return 0', () => {
-	assertEquals(partTwo(sampleInputData), 0);
+Deno.test('partTwo should return 31', () => {
+	assertEquals(partTwo(sampleInputData), 31);
 });
 
 Deno.test('partOne refactored should return 0', () => {

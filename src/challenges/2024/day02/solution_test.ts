@@ -15,8 +15,8 @@ Deno.test('partTwo should return 4', () => {
 	assertEquals(partTwo(sampleInputData), 4);
 });
 
-Deno.test('partOne refactored should return 0', () => {
-	assertEquals(partOneRefactored(sampleInputData), 0);
+Deno.test('partOne refactored should return 2', () => {
+	assertEquals(partOneRefactored(sampleInputData), 2);
 });
 
 Deno.test('partTwo refactored should return 0', () => {

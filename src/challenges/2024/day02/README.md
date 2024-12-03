@@ -2,11 +2,36 @@
 
 ## Tests
 ```shell
+~/Desktop/Code/aoc git:[2024]
+deno task cli -t -y 2024 -d 2
+Task cli deno run --allow-read --allow-write --allow-run --allow-env --allow-net ./cli/index.ts "-t" "-y" "2024" "-d" "2"
+Check file:///Users/steven/Desktop/Code/aoc/src/challenges/2024/day02/solution_test.ts
+running 4 tests from ./src/challenges/2024/day02/solution_test.ts
+partOne should return 2 ... ok (0ms)
+partTwo should return 4 ... ok (0ms)
+partOne refactored should return 2 ... ok (0ms)
+partTwo refactored should return 0 ... ok (0ms)
+
+ok | 4 passed | 0 failed (1ms)
 
 ```
 
 ## Bench
 ```shell
+~/Desktop/Code/aoc git:[2024]
+deno task cli -b -y 2024 -d 2
+Task cli deno run --allow-read --allow-write --allow-run --allow-env --allow-net ./cli/index.ts "-b" "-y" "2024" "-d" "2"
+Check file:///Users/steven/Desktop/Code/aoc/src/challenges/2024/day02/solution_bench.ts
+    CPU | Apple M1
+Runtime | Deno 2.1.1 (aarch64-apple-darwin)
+
+file:///Users/steven/Desktop/Code/aoc/src/challenges/2024/day02/solution_bench.ts
+
+benchmark              time/iter (avg)        iter/s      (min … max)           p75      p99     p995
+---------------------- ----------------------------- --------------------- --------------------------
+partOne                       432.5 µs         2,312 (414.2 µs … 757.0 µs) 425.1 µs 561.4 µs 595.8 µs
+partTwo                       907.5 µs         1,102 (856.2 µs …   1.3 ms) 920.5 µs   1.1 ms   1.1 ms
+partOne - Refactored          450.1 µs         2,222 (428.6 µs … 651.0 µs) 448.9 µs 593.5 µs 602.1 µs
 
 ```
 

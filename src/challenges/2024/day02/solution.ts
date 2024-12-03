@@ -51,7 +51,7 @@ export function partTwo(input: string): number {
 	return safeCount;
 }
 
-function isSafe(levels: number[]): boolean {
+export function isSafe(levels: number[]): boolean {
 	let isIncreasing = true;
 	let isDecreasing = true;
 

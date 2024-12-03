@@ -9,14 +9,14 @@ Deno.bench('partOne', () => {
 	partOne(inputData);
 });
 
-Deno.bench('partTwo', () => {
-	partTwo(inputData);
-});
+// Deno.bench('partTwo', () => {
+// 	partTwo(inputData);
+// });
 
 Deno.bench('partOne - Refactored', () => {
 	partOneRefactored(inputData);
 });
 
-Deno.bench('partTwo - Refactored', () => {
-	partTwoRefactored(inputData);
-});
+// Deno.bench('partTwo - Refactored', () => {
+// 	partTwoRefactored(inputData);
+// });
